@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0EE23441673AD5E00CEE920 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23431673AD5E00CEE920 /* UIKit.framework */; };
+		D0EE23461673AD5E00CEE920 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23451673AD5E00CEE920 /* Foundation.framework */; };
+		D0EE23481673AD5E00CEE920 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23471673AD5E00CEE920 /* CoreGraphics.framework */; };
+		D0EE234A1673AD5E00CEE920 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23491673AD5E00CEE920 /* CoreData.framework */; };
+		D0EE23501673AD5E00CEE920 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0EE234E1673AD5E00CEE920 /* InfoPlist.strings */; };
+		D0EE23521673AD5E00CEE920 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EE23511673AD5E00CEE920 /* main.m */; };
+		D0EE23561673AD5E00CEE920 /* SWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EE23551673AD5E00CEE920 /* SWAppDelegate.m */; };
+		D0EE23581673AD5E00CEE920 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EE23571673AD5E00CEE920 /* Default.png */; };
+		D0EE235A1673AD5E00CEE920 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EE23591673AD5E00CEE920 /* Default@2x.png */; };
+		D0EE235C1673AD5E00CEE920 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EE235B1673AD5E00CEE920 /* Default-568h@2x.png */; };
+		D0EE235F1673AD5E00CEE920 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EE235D1673AD5E00CEE920 /* MainStoryboard.storyboard */; };
+		D0EE23621673AD5E00CEE920 /* sharableink.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EE23601673AD5E00CEE920 /* sharableink.xcdatamodeld */; };
+		D0EE23651673AD5E00CEE920 /* SWMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EE23641673AD5E00CEE920 /* SWMasterViewController.m */; };
+		D0EE23681673AD5F00CEE920 /* SWDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EE23671673AD5F00CEE920 /* SWDetailViewController.m */; };
+		D0EE23701673AD5F00CEE920 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE236F1673AD5F00CEE920 /* SenTestingKit.framework */; };
+		D0EE23711673AD5F00CEE920 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23431673AD5E00CEE920 /* UIKit.framework */; };
+		D0EE23721673AD5F00CEE920 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23451673AD5E00CEE920 /* Foundation.framework */; };
+		D0EE23731673AD5F00CEE920 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23491673AD5E00CEE920 /* CoreData.framework */; };
+		D0EE237B1673AD5F00CEE920 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0EE23791673AD5F00CEE920 /* InfoPlist.strings */; };
+		D0EE237E1673AD5F00CEE920 /* sharableinkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EE237D1673AD5F00CEE920 /* sharableinkTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0EE23741673AD5F00CEE920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0EE23361673AD5E00CEE920 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0EE233E1673AD5E00CEE920;
+			remoteInfo = sharableink;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D0EE233F1673AD5E00CEE920 /* sharableink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sharableink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0EE23431673AD5E00CEE920 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D0EE23451673AD5E00CEE920 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D0EE23471673AD5E00CEE920 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D0EE23491673AD5E00CEE920 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D0EE234D1673AD5E00CEE920 /* sharableink-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "sharableink-Info.plist"; sourceTree = "<group>"; };
+		D0EE234F1673AD5E00CEE920 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D0EE23511673AD5E00CEE920 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D0EE23531673AD5E00CEE920 /* sharableink-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sharableink-Prefix.pch"; sourceTree = "<group>"; };
+		D0EE23541673AD5E00CEE920 /* SWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWAppDelegate.h; sourceTree = "<group>"; };
+		D0EE23551673AD5E00CEE920 /* SWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWAppDelegate.m; sourceTree = "<group>"; };
+		D0EE23571673AD5E00CEE920 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D0EE23591673AD5E00CEE920 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D0EE235B1673AD5E00CEE920 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D0EE235E1673AD5E00CEE920 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		D0EE23611673AD5E00CEE920 /* sharableink.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sharableink.xcdatamodel; sourceTree = "<group>"; };
+		D0EE23631673AD5E00CEE920 /* SWMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWMasterViewController.h; sourceTree = "<group>"; };
+		D0EE23641673AD5E00CEE920 /* SWMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWMasterViewController.m; sourceTree = "<group>"; };
+		D0EE23661673AD5F00CEE920 /* SWDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWDetailViewController.h; sourceTree = "<group>"; };
+		D0EE23671673AD5F00CEE920 /* SWDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWDetailViewController.m; sourceTree = "<group>"; };
+		D0EE236E1673AD5F00CEE920 /* sharableinkTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sharableinkTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0EE236F1673AD5F00CEE920 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D0EE23781673AD5F00CEE920 /* sharableinkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "sharableinkTests-Info.plist"; sourceTree = "<group>"; };
+		D0EE237A1673AD5F00CEE920 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D0EE237C1673AD5F00CEE920 /* sharableinkTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sharableinkTests.h; sourceTree = "<group>"; };
+		D0EE237D1673AD5F00CEE920 /* sharableinkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sharableinkTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0EE233C1673AD5E00CEE920 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0EE23441673AD5E00CEE920 /* UIKit.framework in Frameworks */,
+				D0EE23461673AD5E00CEE920 /* Foundation.framework in Frameworks */,
+				D0EE23481673AD5E00CEE920 /* CoreGraphics.framework in Frameworks */,
+				D0EE234A1673AD5E00CEE920 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0EE236A1673AD5F00CEE920 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0EE23701673AD5F00CEE920 /* SenTestingKit.framework in Frameworks */,
+				D0EE23711673AD5F00CEE920 /* UIKit.framework in Frameworks */,
+				D0EE23721673AD5F00CEE920 /* Foundation.framework in Frameworks */,
+				D0EE23731673AD5F00CEE920 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0EE23341673AD5E00CEE920 = {
+			isa = PBXGroup;
+			children = (
+				D0EE234B1673AD5E00CEE920 /* sharableink */,
+				D0EE23761673AD5F00CEE920 /* sharableinkTests */,
+				D0EE23421673AD5E00CEE920 /* Frameworks */,
+				D0EE23401673AD5E00CEE920 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0EE23401673AD5E00CEE920 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE233F1673AD5E00CEE920 /* sharableink.app */,
+				D0EE236E1673AD5F00CEE920 /* sharableinkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0EE23421673AD5E00CEE920 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE23431673AD5E00CEE920 /* UIKit.framework */,
+				D0EE23451673AD5E00CEE920 /* Foundation.framework */,
+				D0EE23471673AD5E00CEE920 /* CoreGraphics.framework */,
+				D0EE23491673AD5E00CEE920 /* CoreData.framework */,
+				D0EE236F1673AD5F00CEE920 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0EE234B1673AD5E00CEE920 /* sharableink */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE23541673AD5E00CEE920 /* SWAppDelegate.h */,
+				D0EE23551673AD5E00CEE920 /* SWAppDelegate.m */,
+				D0EE235D1673AD5E00CEE920 /* MainStoryboard.storyboard */,
+				D0EE23631673AD5E00CEE920 /* SWMasterViewController.h */,
+				D0EE23641673AD5E00CEE920 /* SWMasterViewController.m */,
+				D0EE23661673AD5F00CEE920 /* SWDetailViewController.h */,
+				D0EE23671673AD5F00CEE920 /* SWDetailViewController.m */,
+				D0EE23601673AD5E00CEE920 /* sharableink.xcdatamodeld */,
+				D0EE234C1673AD5E00CEE920 /* Supporting Files */,
+			);
+			path = sharableink;
+			sourceTree = "<group>";
+		};
+		D0EE234C1673AD5E00CEE920 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE234D1673AD5E00CEE920 /* sharableink-Info.plist */,
+				D0EE234E1673AD5E00CEE920 /* InfoPlist.strings */,
+				D0EE23511673AD5E00CEE920 /* main.m */,
+				D0EE23531673AD5E00CEE920 /* sharableink-Prefix.pch */,
+				D0EE23571673AD5E00CEE920 /* Default.png */,
+				D0EE23591673AD5E00CEE920 /* Default@2x.png */,
+				D0EE235B1673AD5E00CEE920 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0EE23761673AD5F00CEE920 /* sharableinkTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE237C1673AD5F00CEE920 /* sharableinkTests.h */,
+				D0EE237D1673AD5F00CEE920 /* sharableinkTests.m */,
+				D0EE23771673AD5F00CEE920 /* Supporting Files */,
+			);
+			path = sharableinkTests;
+			sourceTree = "<group>";
+		};
+		D0EE23771673AD5F00CEE920 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE23781673AD5F00CEE920 /* sharableinkTests-Info.plist */,
+				D0EE23791673AD5F00CEE920 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0EE233E1673AD5E00CEE920 /* sharableink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0EE23811673AD5F00CEE920 /* Build configuration list for PBXNativeTarget "sharableink" */;
+			buildPhases = (
+				D0EE233B1673AD5E00CEE920 /* Sources */,
+				D0EE233C1673AD5E00CEE920 /* Frameworks */,
+				D0EE233D1673AD5E00CEE920 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sharableink;
+			productName = sharableink;
+			productReference = D0EE233F1673AD5E00CEE920 /* sharableink.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0EE236D1673AD5F00CEE920 /* sharableinkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0EE23841673AD5F00CEE920 /* Build configuration list for PBXNativeTarget "sharableinkTests" */;
+			buildPhases = (
+				D0EE23691673AD5F00CEE920 /* Sources */,
+				D0EE236A1673AD5F00CEE920 /* Frameworks */,
+				D0EE236B1673AD5F00CEE920 /* Resources */,
+				D0EE236C1673AD5F00CEE920 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0EE23751673AD5F00CEE920 /* PBXTargetDependency */,
+			);
+			name = sharableinkTests;
+			productName = sharableinkTests;
+			productReference = D0EE236E1673AD5F00CEE920 /* sharableinkTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0EE23361673AD5E00CEE920 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SW;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Swedesoft;
+			};
+			buildConfigurationList = D0EE23391673AD5E00CEE920 /* Build configuration list for PBXProject "sharableink" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D0EE23341673AD5E00CEE920;
+			productRefGroup = D0EE23401673AD5E00CEE920 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0EE233E1673AD5E00CEE920 /* sharableink */,
+				D0EE236D1673AD5F00CEE920 /* sharableinkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0EE233D1673AD5E00CEE920 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0EE23501673AD5E00CEE920 /* InfoPlist.strings in Resources */,
+				D0EE23581673AD5E00CEE920 /* Default.png in Resources */,
+				D0EE235A1673AD5E00CEE920 /* Default@2x.png in Resources */,
+				D0EE235C1673AD5E00CEE920 /* Default-568h@2x.png in Resources */,
+				D0EE235F1673AD5E00CEE920 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0EE236B1673AD5F00CEE920 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0EE237B1673AD5F00CEE920 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D0EE236C1673AD5F00CEE920 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0EE233B1673AD5E00CEE920 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0EE23521673AD5E00CEE920 /* main.m in Sources */,
+				D0EE23561673AD5E00CEE920 /* SWAppDelegate.m in Sources */,
+				D0EE23621673AD5E00CEE920 /* sharableink.xcdatamodeld in Sources */,
+				D0EE23651673AD5E00CEE920 /* SWMasterViewController.m in Sources */,
+				D0EE23681673AD5F00CEE920 /* SWDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0EE23691673AD5F00CEE920 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0EE237E1673AD5F00CEE920 /* sharableinkTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0EE23751673AD5F00CEE920 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0EE233E1673AD5E00CEE920 /* sharableink */;
+			targetProxy = D0EE23741673AD5F00CEE920 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D0EE234E1673AD5E00CEE920 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0EE234F1673AD5E00CEE920 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D0EE235D1673AD5E00CEE920 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0EE235E1673AD5E00CEE920 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		D0EE23791673AD5F00CEE920 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0EE237A1673AD5F00CEE920 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0EE237F1673AD5F00CEE920 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		D0EE23801673AD5F00CEE920 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0EE23821673AD5F00CEE920 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "sharableink/sharableink-Prefix.pch";
+				INFOPLIST_FILE = "sharableink/sharableink-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D0EE23831673AD5F00CEE920 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "sharableink/sharableink-Prefix.pch";
+				INFOPLIST_FILE = "sharableink/sharableink-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D0EE23851673AD5F00CEE920 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/sharableink.app/sharableink";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "sharableink/sharableink-Prefix.pch";
+				INFOPLIST_FILE = "sharableinkTests/sharableinkTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D0EE23861673AD5F00CEE920 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/sharableink.app/sharableink";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "sharableink/sharableink-Prefix.pch";
+				INFOPLIST_FILE = "sharableinkTests/sharableinkTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0EE23391673AD5E00CEE920 /* Build configuration list for PBXProject "sharableink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0EE237F1673AD5F00CEE920 /* Debug */,
+				D0EE23801673AD5F00CEE920 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0EE23811673AD5F00CEE920 /* Build configuration list for PBXNativeTarget "sharableink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0EE23821673AD5F00CEE920 /* Debug */,
+				D0EE23831673AD5F00CEE920 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D0EE23841673AD5F00CEE920 /* Build configuration list for PBXNativeTarget "sharableinkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0EE23851673AD5F00CEE920 /* Debug */,
+				D0EE23861673AD5F00CEE920 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D0EE23601673AD5E00CEE920 /* sharableink.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D0EE23611673AD5E00CEE920 /* sharableink.xcdatamodel */,
+			);
+			currentVersion = D0EE23611673AD5E00CEE920 /* sharableink.xcdatamodel */;
+			path = sharableink.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D0EE23361673AD5E00CEE920 /* Project object */;
+}
