@@ -1,5 +1,5 @@
 //
-//  SWFormControllerDelegate.h
+//  SWDocumentBrowserDelegate.h
 //  sharableink
 //
 //  Created by PETER MOBERG on 12/9/12.
@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol SWFormControllerDelegate <NSObject>
+@protocol SWDocumentBrowserDelegate <NSObject>
+
+-(void)k
 
 @end

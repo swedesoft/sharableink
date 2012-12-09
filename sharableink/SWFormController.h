@@ -7,8 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SWFormControllerDelegate.h"
+#import "SWFormFieldControllerDelegate.h"
 
-@interface SWFormController : UIViewController<SWFormControllerDelegate>
+@class SWFormController;
+@class SWForm;
+
+@protocol SWFormControllerDelegate <NSObject>
+
+-(void)formControllerDidCancel:(SWFormController *)controller;
+
+-(void)formControllerDidSave:(SWFormController *)controller;
+
+@end
+
+@interface SWFormController : UIViewController<SWFormFieldControllerDelegate>
+
+@property(weak,nonatomic)id<SWFormControllerDelegate> delegate;
+@property(strong,nonatomic)SWForm *form;
 
 @end

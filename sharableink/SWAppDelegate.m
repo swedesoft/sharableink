@@ -9,8 +9,16 @@
 #import "SWAppDelegate.h"
 
 #import "SWMasterViewController.h"
+#import "SWPatientService.h"
+
 
 static NSString *TestFlightAPIToken = @"ad05f99d108def2ef3c9befa0484f26b_MTY0MjQzMjAxMi0xMi0wOCAxMjo0Nzo1My4yOTcyNzU";
+
+@interface SWAppDelegate ()
+
+@property(strong,nonatomic)SWPatientService *patientService;
+
+@end
 
 @implementation SWAppDelegate
 
@@ -34,8 +42,14 @@ static NSString *TestFlightAPIToken = @"ad05f99d108def2ef3c9befa0484f26b_MTY0MjQ
     
     [TestFlight takeOff:TestFlightAPIToken];
     
+    //Setup services and fire any network requests we need
+    self.patientService = [[SWPatientService alloc] init];
+
+    
     return YES;
 }
+
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

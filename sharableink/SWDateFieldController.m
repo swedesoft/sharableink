@@ -67,7 +67,7 @@
 
 -(void)doneClicked:(id)sender
 {
-    NSDate *editedDate = self.dateField.date;
+
     
     NSString *formattedDate = [self.dateFormatter stringFromDate:self.dateField.date];
     

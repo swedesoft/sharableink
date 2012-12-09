@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "SWField.h"
-#import "SWFormControllerDelegate.h"
+#import "SWFormFieldControllerDelegate.h"
 
 
 
 @protocol SWFieldController <NSObject>
 
 @property(strong, nonatomic)SWField *field;
-@property(weak, nonatomic)id<SWFormControllerDelegate> formController;
+@property(weak, nonatomic)id<SWFormFieldControllerDelegate> formController;
 
 @end

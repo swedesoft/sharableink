@@ -25,7 +25,7 @@
     if (self) {
         
         self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-        
+        self.textLabel.backgroundColor = [UIColor colorWithWhite:0.80f alpha:1.0f];
         self.textLabel.adjustsFontSizeToFitWidth = YES;
                 [self addSubview:self.textLabel];
     }

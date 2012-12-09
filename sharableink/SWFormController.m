@@ -13,6 +13,7 @@
 #import "SWFormFieldLayoutDelegate.h"
 #import "SWFormFieldCell.h"
 #import "SWDateField.h"
+#import "SWForm.h"
 
 @interface SWFormController () <UIScrollViewDelegate,UIGestureRecognizerDelegate,UIPopoverControllerDelegate>
 
@@ -20,7 +21,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic)UIImageView *background;
-@property(strong,nonatomic)NSArray *fields;
+
 
 @property(strong,nonatomic)UIPopoverController *fieldPopover;
 @property(strong,nonatomic)UIViewController *currentPopoverContentController;
@@ -46,8 +47,16 @@
     
     [self setupBackground];
     [self setupScrollView];
-    [self setupFormFields];
     [self layoutFormFields];
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonClicked:)];
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonClicked:)];
+    
+    self.navigationController.title = @"Edit document";
+    
+    [self.navigationItem setLeftBarButtonItem:cancelButton animated:NO];
+    [self.navigationItem setRightBarButtonItem:doneButton animated:NO];
+    
     
 }
 
@@ -62,6 +71,8 @@
     
     self.scrollView.minimumZoomScale = minimumZoomScale;
     self.scrollView.zoomScale = minimumZoomScale;
+    
+    //Animate the opacity of the scroll view here? 
     
 }
 
@@ -80,6 +91,17 @@
         
         [self presentPopoverWithController:self.currentPopoverContentController anchoredAt:self.currentPopoverAnchor];
     }
+}
+
+#pragma mark - Button handlers
+-(void)doneButtonClicked:(id)sender
+{
+    [self.delegate formControllerDidCancel:self];
+}
+
+-(void)cancelButtonClicked:(id)sender
+{
+    [self.delegate formControllerDidSave:self];
 }
 
 #pragma mark - ScrollViewDelegate methods
@@ -138,43 +160,15 @@
 }
 -(void)setupFormFields
 {
-    SWSingleSelectListField *field = [[SWSingleSelectListField alloc] init];
-    
-    field.list = @[@"Procedure 1", @"Procedure 2"];
-    CGSize imageSize = self.background.image.size;
-    field.location = CGRectMake(0.279*imageSize.width, 0.118*imageSize.height, 0.683*imageSize.width, 0.022*imageSize.height);
-    field.value = @"Procedure1";
-    field.displayTitle = @"Select procedure";
-    
-    SWSingleSelectListField *surgeonsField = [[SWSingleSelectListField alloc] init];
-    
-    surgeonsField.list = @[@"Dr 1", @"Dr 2"];
-    surgeonsField.location = CGRectMake(0.279*imageSize.width, 0.152*imageSize.height, 0.333*imageSize.width, 0.009*imageSize.height);
-    surgeonsField.value = @"Dr 1";
-    surgeonsField.displayTitle = @"Select surgeon";
-    
-    SWSingleSelectListField *anesthesiaProvidersField = [[SWSingleSelectListField alloc] init];
-    
-    anesthesiaProvidersField.list = @[@"Dr 3", @"Dr 4"];
-    anesthesiaProvidersField.location = CGRectMake(0.622*imageSize.width, 0.151*imageSize.height, 0.337*imageSize.width, 0.01*imageSize.height);
-    anesthesiaProvidersField.value = @"Dr 3";
-    anesthesiaProvidersField.displayTitle = @"Select provider";
-    
-    SWDateField *dateField = [[SWDateField alloc] init];
-    dateField.location = CGRectMake(0.036*imageSize.width, 0.178*imageSize.height, 0.145*imageSize.width, 0.013*imageSize.height);
-    dateField.modalInEditMode = YES;
-    dateField.displayTitle = @"Select date";
-    
-    
-    self.fields = @[field, surgeonsField, anesthesiaProvidersField, dateField];
-}
+        
+    }
 
 //Goes over all of the field meta data and creates form field cells and
 //overlays them on the background
 -(void)layoutFormFields
 {
 
-    [self.fields enumerateObjectsUsingBlock:^(SWField * field, NSUInteger idx, BOOL *stop) {
+    [self.form.formFields enumerateObjectsUsingBlock:^(SWField * field, NSUInteger idx, BOOL *stop) {
         
         UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fieldWasSelected:)];
         recognizer.numberOfTapsRequired = 1;
