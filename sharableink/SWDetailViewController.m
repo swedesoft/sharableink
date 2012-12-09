@@ -7,10 +7,14 @@
 //
 
 #import "SWDetailViewController.h"
+#import "SWFormFieldLayout.h"
 
-@interface SWDetailViewController ()
+@interface SWDetailViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
+
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
+@property (weak, nonatomic) IBOutlet UICollectionView *formsView;
+
 @end
 
 @implementation SWDetailViewController
@@ -45,6 +49,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    
+   // [self.formsView reloadData];
+    
+    self.formsView.collectionViewLayout = [[SWFormFieldLayout alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,4 +77,61 @@
     self.masterPopoverController = nil;
 }
 
+
+#pragma mark - UICollectionViewDataSource
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AnesthesiaRecord.png"]];
+    
+    return cell;
+}
+
+
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+
+
+#pragma mark -UICollectionViewDelegate
+
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return scrollView.subviews[0];
+}
+
+-(void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
+{
+    TFLog(@"EndScale: %f", scale);
+    TFLog(@"contentScaleFactor: %f ", scrollView.contentScaleFactor);
+    [self.formsView.collectionViewLayout invalidateLayout];
+    
+    
+}
+
+
+
+
+#pragma mark - UIScrollViewDelegate
+//-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+//{
+//    TFLog(@"Zooming in");
+//    return scrollView.subviews[0];
+//}
+
+
+
+     - (void)viewDidUnload {
+         [self setFormsView:nil];
+         [super viewDidUnload];
+     }
 @end

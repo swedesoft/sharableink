@@ -10,6 +10,8 @@
 
 #import "SWMasterViewController.h"
 
+static NSString *TestFlightAPIToken = @"ad05f99d108def2ef3c9befa0484f26b_MTY0MjQzMjAxMi0xMi0wOCAxMjo0Nzo1My4yOTcyNzU";
+
 @implementation SWAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -26,6 +28,12 @@
     UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
     SWMasterViewController *controller = (SWMasterViewController *)masterNavigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    
+    //Apple doesn't like you doing this anymore but for this little demo app it is fine
+    [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
+    
+    [TestFlight takeOff:TestFlightAPIToken];
+    
     return YES;
 }
 							

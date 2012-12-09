@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D08F14921673D00C006BF441 /* AnesthesiaRecord.png in Resources */ = {isa = PBXBuildFile; fileRef = D08F14911673D00C006BF441 /* AnesthesiaRecord.png */; };
+		D08F149A1673EB7E006BF441 /* SWFormFieldLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D08F14991673EB7E006BF441 /* SWFormFieldLayout.m */; };
+		D08F149E1673FDE5006BF441 /* SWFormBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = D08F149D1673FDE5006BF441 /* SWFormBackground.m */; };
+		D08F14A01673FE41006BF441 /* FormBackground.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08F149F1673FE41006BF441 /* FormBackground.xib */; };
+		D08F14A21674017A006BF441 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08F14A11674017A006BF441 /* QuartzCore.framework */; };
 		D0EE23441673AD5E00CEE920 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23431673AD5E00CEE920 /* UIKit.framework */; };
 		D0EE23461673AD5E00CEE920 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23451673AD5E00CEE920 /* Foundation.framework */; };
 		D0EE23481673AD5E00CEE920 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23471673AD5E00CEE920 /* CoreGraphics.framework */; };
@@ -27,6 +32,10 @@
 		D0EE23731673AD5F00CEE920 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23491673AD5E00CEE920 /* CoreData.framework */; };
 		D0EE237B1673AD5F00CEE920 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0EE23791673AD5F00CEE920 /* InfoPlist.strings */; };
 		D0EE237E1673AD5F00CEE920 /* sharableinkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EE237D1673AD5F00CEE920 /* sharableinkTests.m */; };
+		D0EE238D1673C11F00CEE920 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23891673C11F00CEE920 /* libTestFlight.a */; };
+		D0EE238E1673C11F00CEE920 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D0EE238A1673C11F00CEE920 /* README.md */; };
+		D0EE238F1673C11F00CEE920 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = D0EE238B1673C11F00CEE920 /* release_notes.md */; };
+		D0EE23911673C14D00CEE920 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23901673C14D00CEE920 /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D08F14911673D00C006BF441 /* AnesthesiaRecord.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnesthesiaRecord.png; sourceTree = "<group>"; };
+		D08F14981673EB7E006BF441 /* SWFormFieldLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFormFieldLayout.h; sourceTree = "<group>"; };
+		D08F14991673EB7E006BF441 /* SWFormFieldLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWFormFieldLayout.m; sourceTree = "<group>"; };
+		D08F149C1673FDE5006BF441 /* SWFormBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFormBackground.h; sourceTree = "<group>"; };
+		D08F149D1673FDE5006BF441 /* SWFormBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWFormBackground.m; sourceTree = "<group>"; };
+		D08F149F1673FE41006BF441 /* FormBackground.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormBackground.xib; sourceTree = "<group>"; };
+		D08F14A11674017A006BF441 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D0EE233F1673AD5E00CEE920 /* sharableink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sharableink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EE23431673AD5E00CEE920 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D0EE23451673AD5E00CEE920 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -66,6 +82,11 @@
 		D0EE237A1673AD5F00CEE920 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D0EE237C1673AD5F00CEE920 /* sharableinkTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sharableinkTests.h; sourceTree = "<group>"; };
 		D0EE237D1673AD5F00CEE920 /* sharableinkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sharableinkTests.m; sourceTree = "<group>"; };
+		D0EE23891673C11F00CEE920 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		D0EE238A1673C11F00CEE920 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		D0EE238B1673C11F00CEE920 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		D0EE238C1673C11F00CEE920 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		D0EE23901673C14D00CEE920 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +94,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D08F14A21674017A006BF441 /* QuartzCore.framework in Frameworks */,
+				D0EE23481673AD5E00CEE920 /* CoreGraphics.framework in Frameworks */,
+				D0EE23911673C14D00CEE920 /* libz.dylib in Frameworks */,
 				D0EE23441673AD5E00CEE920 /* UIKit.framework in Frameworks */,
 				D0EE23461673AD5E00CEE920 /* Foundation.framework in Frameworks */,
-				D0EE23481673AD5E00CEE920 /* CoreGraphics.framework in Frameworks */,
 				D0EE234A1673AD5E00CEE920 /* CoreData.framework in Frameworks */,
+				D0EE238D1673C11F00CEE920 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,9 +118,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D08F14901673D00C006BF441 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D08F14911673D00C006BF441 /* AnesthesiaRecord.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		D0EE23341673AD5E00CEE920 = {
 			isa = PBXGroup;
 			children = (
+				D08F14A11674017A006BF441 /* QuartzCore.framework */,
+				D08F14901673D00C006BF441 /* images */,
+				D0EE23901673C14D00CEE920 /* libz.dylib */,
+				D0EE23871673C0F800CEE920 /* 3rdParty */,
 				D0EE234B1673AD5E00CEE920 /* sharableink */,
 				D0EE23761673AD5F00CEE920 /* sharableinkTests */,
 				D0EE23421673AD5E00CEE920 /* Frameworks */,
@@ -128,6 +164,10 @@
 		D0EE234B1673AD5E00CEE920 /* sharableink */ = {
 			isa = PBXGroup;
 			children = (
+				D08F149C1673FDE5006BF441 /* SWFormBackground.h */,
+				D08F149D1673FDE5006BF441 /* SWFormBackground.m */,
+				D08F14981673EB7E006BF441 /* SWFormFieldLayout.h */,
+				D08F14991673EB7E006BF441 /* SWFormFieldLayout.m */,
 				D0EE23541673AD5E00CEE920 /* SWAppDelegate.h */,
 				D0EE23551673AD5E00CEE920 /* SWAppDelegate.m */,
 				D0EE235D1673AD5E00CEE920 /* MainStoryboard.storyboard */,
@@ -137,6 +177,7 @@
 				D0EE23671673AD5F00CEE920 /* SWDetailViewController.m */,
 				D0EE23601673AD5E00CEE920 /* sharableink.xcdatamodeld */,
 				D0EE234C1673AD5E00CEE920 /* Supporting Files */,
+				D08F149F1673FE41006BF441 /* FormBackground.xib */,
 			);
 			path = sharableink;
 			sourceTree = "<group>";
@@ -172,6 +213,25 @@
 				D0EE23791673AD5F00CEE920 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0EE23871673C0F800CEE920 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE23881673C11F00CEE920 /* TestFlightSDK1 */,
+			);
+			name = 3rdParty;
+			sourceTree = "<group>";
+		};
+		D0EE23881673C11F00CEE920 /* TestFlightSDK1 */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE23891673C11F00CEE920 /* libTestFlight.a */,
+				D0EE238A1673C11F00CEE920 /* README.md */,
+				D0EE238B1673C11F00CEE920 /* release_notes.md */,
+				D0EE238C1673C11F00CEE920 /* TestFlight.h */,
+			);
+			path = TestFlightSDK1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +311,10 @@
 				D0EE235A1673AD5E00CEE920 /* Default@2x.png in Resources */,
 				D0EE235C1673AD5E00CEE920 /* Default-568h@2x.png in Resources */,
 				D0EE235F1673AD5E00CEE920 /* MainStoryboard.storyboard in Resources */,
+				D0EE238E1673C11F00CEE920 /* README.md in Resources */,
+				D0EE238F1673C11F00CEE920 /* release_notes.md in Resources */,
+				D08F14921673D00C006BF441 /* AnesthesiaRecord.png in Resources */,
+				D08F14A01673FE41006BF441 /* FormBackground.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +354,8 @@
 				D0EE23621673AD5E00CEE920 /* sharableink.xcdatamodeld in Sources */,
 				D0EE23651673AD5E00CEE920 /* SWMasterViewController.m in Sources */,
 				D0EE23681673AD5F00CEE920 /* SWDetailViewController.m in Sources */,
+				D08F149A1673EB7E006BF441 /* SWFormFieldLayout.m in Sources */,
+				D08F149E1673FDE5006BF441 /* SWFormBackground.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +427,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -383,7 +449,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -394,10 +460,17 @@
 		D0EE23821673AD5F00CEE920 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sharableink/sharableink-Prefix.pch";
 				INFOPLIST_FILE = "sharableink/sharableink-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/TestFlightSDK1\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -405,10 +478,17 @@
 		D0EE23831673AD5F00CEE920 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sharableink/sharableink-Prefix.pch";
 				INFOPLIST_FILE = "sharableink/sharableink-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/TestFlightSDK1\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -466,6 +546,7 @@
 				D0EE23831673AD5F00CEE920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0EE23841673AD5F00CEE920 /* Build configuration list for PBXNativeTarget "sharableinkTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +555,7 @@
 				D0EE23861673AD5F00CEE920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
