@@ -12,5 +12,8 @@
 
 @property(strong,nonatomic)NSString *viewControllerIdentifier;
 @property(assign,nonatomic)CGRect location;
+@property(strong, nonatomic)NSString *value;
+@property(assign, nonatomic)BOOL modalInEditMode;
+@property(strong, nonatomic)NSString *displayTitle;
 
 @end
