@@ -8,6 +8,8 @@ adhoc/
 
 .xcodeproj/ !*.xcodeproj/project.pbxproj
 
+*.xcworkspace
+
 *.mode1v3
 *.mode2v3
 
