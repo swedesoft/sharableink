@@ -8,12 +8,23 @@
 
 #import "SWDetailViewController.h"
 #import "SWFormFieldLayout.h"
+#import "SWSingleSelectListField.h"
+#import "SWField.h"
+#import "SWFieldController.h"
+#import "SWFormFieldLayoutDelegate.h"
 
-@interface SWDetailViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
+@interface SWDetailViewController () <UICollectionViewDataSource,SWFormFieldLayoutDelegate>
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+
 - (void)configureView;
+
+@property(strong,nonatomic)NSArray *fields;
+
 @property (weak, nonatomic) IBOutlet UICollectionView *formsView;
+@property(strong,nonatomic) NSIndexPath *currentSelectedPath;
+@property(strong,nonatomic) UIPopoverController *fieldPopover;
+
 
 @end
 
@@ -50,9 +61,18 @@
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
     
-   // [self.formsView reloadData];
-    
     self.formsView.collectionViewLayout = [[SWFormFieldLayout alloc] init];
+    
+    self.formsView.allowsSelection = YES;
+    
+    SWSingleSelectListField *field = [[SWSingleSelectListField alloc] init];
+    
+    field.list = @[@"Procedure 1", @"Procedure 2"];
+    field.location = CGRectMake(200, 200, 400, 200);
+    
+    
+    self.fields = @[field];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,7 +112,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 1;
+    return [self.fields count];
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -102,36 +122,50 @@
 
 
 
-#pragma mark -UICollectionViewDelegate
+#pragma mark -SWFormFieldLayoutDelegate
+
+-(CGRect)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout locationForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    SWField *field = self.fields[indexPath.row];
+    
+    return field.location;
+
+}
 
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
-    return scrollView.subviews[0];
+    return scrollView.subviews[0]; //Love the new literal capabilities like subscripting
 }
 
--(void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
+
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    TFLog(@"EndScale: %f", scale);
-    TFLog(@"contentScaleFactor: %f ", scrollView.contentScaleFactor);
-    [self.formsView.collectionViewLayout invalidateLayout];
+    UICollectionViewCell *selectedCell = [self.formsView cellForItemAtIndexPath:indexPath];
     
+    SWField *selectedField = self.fields[indexPath.row];
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    
+    UIViewController *controller = [storyBoard instantiateViewControllerWithIdentifier:selectedField.viewControllerIdentifier];
+    
+    id<SWFieldController> fieldController = (id<SWFieldController>)controller;
+    
+    fieldController.field = selectedField;
+    
+    self.fieldPopover = [[UIPopoverController alloc] initWithContentViewController:controller];
+    
+    [self.fieldPopover presentPopoverFromRect:selectedCell.frame inView:self.formsView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     
 }
 
+#pragma mark - Private methods
 
 
 
-#pragma mark - UIScrollViewDelegate
-//-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
-//{
-//    TFLog(@"Zooming in");
-//    return scrollView.subviews[0];
-//}
-
-
-
-     - (void)viewDidUnload {
+- (void)viewDidUnload {
          [self setFormsView:nil];
          [super viewDidUnload];
-     }
+}
+
 @end

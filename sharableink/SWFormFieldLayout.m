@@ -8,6 +8,7 @@
 
 #import "SWFormFieldLayout.h"
 #import "SWFormBackground.h"
+#import "SWFormFieldLayoutDelegate.h"
 
 @implementation SWFormFieldLayout
 
@@ -19,6 +20,9 @@
     
     if (self)
     {
+        //When the DecorationView "Background" is requested then the top-level
+        //view in the following xib file is loaded. This will load the background
+        //image representing the form.
         UINib *nib = [UINib nibWithNibName:@"FormBackground" bundle:nil];
         [self registerNib:nib forDecorationViewOfKind:@"Background"];
     }
@@ -36,6 +40,12 @@
 {
     TFLog(@"Inside collectionViewContentSizze");
     float zoomScale = self.collectionView.zoomScale;
+    
+    if (zoomScale < 1)
+    {
+        zoomScale = 1;
+    }
+    
     return CGSizeMake(self.collectionView.frame.size.width * zoomScale , self.collectionView.frame.size.height * zoomScale);
     
 }
@@ -52,17 +62,24 @@
 
 
 
-
+// Returns the layoutAttributes instance for a particular 
 -(UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    TFLog(@"Inside layoutAttributesForItemAtIndexPath");
+    id<SWFormFieldLayoutDelegate> delegate = (id<SWFormFieldLayoutDelegate>)self.collectionView.delegate;
+    
+    CGRect location = [delegate collectionView:self.collectionView layout:self locationForItemAtIndexPath:indexPath];
+    
+
     UICollectionViewLayoutAttributes *attr =  [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     
     float zoomScale = self.collectionView.zoomScale;
     
-    attr.frame = CGRectMake(100 + (-zoomScale*100), 400, 200*zoomScale,100*zoomScale);
-
-   attr.zIndex = 1;
+    if (zoomScale < 1)
+    {
+        zoomScale = 1;
+    }
+    
+    attr.frame = CGRectMake(location.origin.x, location.origin.y, location.size.width,location.size.height);
 
     
     return attr;
@@ -78,7 +95,14 @@
     
     float zoomScale = self.collectionView.zoomScale;
     
+    if (zoomScale < 1)
+    {
+        zoomScale = 1;
+    }
+    
     attr.frame = CGRectMake(0, 0, self.collectionView.frame.size.width*zoomScale, self.collectionView.frame.size.height*zoomScale);
+    
+    attr.zIndex = -1;
     
     
     return attr;
