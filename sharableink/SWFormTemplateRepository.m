@@ -35,6 +35,8 @@ static int BackgroundHeight = 1743;
     return self;
 }
 
+// Currently it will only create the Anasthesia template
+//
 -(void)createTemplates
 {
     SWFormTemplate *template = [[SWFormTemplate alloc] init];

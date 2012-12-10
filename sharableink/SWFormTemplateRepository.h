@@ -10,7 +10,11 @@
 
 @class SWFormTemplate;
 
+//
+// This class is responsible for storing/retrieving form templates
+
 @interface SWFormTemplateRepository : NSObject
+
 
 -(SWFormTemplate *)getTemplateByName:(NSString *)templateName;
 

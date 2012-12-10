@@ -12,10 +12,15 @@
 @class SWPatient;
 @class SWFormFactory;
 
+//
+// This class is responsible for creating patients. It can create
+// a patient object from raw json data
+//
 @interface SWPatientFactory : NSObject
 
 @property(strong,nonatomic)SWFormTemplateRepository *templateRepository;
 @property(strong,nonatomic)SWFormFactory *formFactory;
+
 
 -(SWPatient *)createPatientFromJSONData:(NSDictionary *)jsonData;
 

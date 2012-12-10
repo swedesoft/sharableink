@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SWFieldController.h"
 
+//
+// This is the controller that responds to user actions on a date field.
+// 
 @interface SWDateFieldController : UIViewController<SWFieldController>
 
 @end

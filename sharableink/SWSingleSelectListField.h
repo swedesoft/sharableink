@@ -10,7 +10,4 @@
 #import "SWField.h"
 
 @interface SWSingleSelectListField : SWField
-
-
-
 @end

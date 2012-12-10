@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SWFieldController.h"
 
+//
+// This is the controller that responds to user inputs on single select list fields
+//
 @interface SWSingleSelectListFieldControllerViewController : UITableViewController<SWFieldController>
 
 @end

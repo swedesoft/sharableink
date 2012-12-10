@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+//
+// A form field carries a lot of information about a field
+// that is on a form. Location, what specific type of
+// field to create etc..
+// 
 @interface SWFormFieldTemplate : NSObject
 
 @property(strong,nonatomic)NSString *fieldClass;

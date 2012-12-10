@@ -30,7 +30,6 @@ static NSString *const PatientKeyFormFields = @"fields";
     
     [forms enumerateObjectsUsingBlock:^(NSDictionary * form, NSUInteger idx, BOOL *stop) {
         
-        //Get the template
         SWFormTemplate *template = [self.templateRepository getTemplateByName:form[PatientKeyFormTemplate]];
         
         [patient addForm:[self.formFactory createFormFromTemplate:template andJSONData:form]];

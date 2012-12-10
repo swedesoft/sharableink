@@ -58,6 +58,8 @@ static NSString *TestFlightAPIToken = @"ad05f99d108def2ef3c9befa0484f26b_MTY0MjQ
     return YES;
 }
 
+// Throws up an alert view. This one is only called after some time so that we don't get any annoying
+//flickering
 -(void)displayNetworkLoading
 {
     if (!self.networkActivityDone)
@@ -70,11 +72,14 @@ static NSString *TestFlightAPIToken = @"ad05f99d108def2ef3c9befa0484f26b_MTY0MjQ
     
 }
 
+//Sets up the notifications that we are interested in.
 -(void)setupNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePatientsRetrieved:) name:NotificationPatientsHasBeenRetrieved object:nil];
 }
 
+//Notification handler. If the alert view is up we just close it because
+//now we are ready to show the data.
 -(void)handlePatientsRetrieved:(NSNotification *)notification
 {
     if (self.alertView)
@@ -86,6 +91,8 @@ static NSString *TestFlightAPIToken = @"ad05f99d108def2ef3c9befa0484f26b_MTY0MjQ
 }
 
 
+//The patient service is responsible for retrieving patient data from the server
+//It needs a couple of repositories and factories and that is all setup here.
 -(void)setupPatientService
 {
     SWFormTemplateRepository *templateRepository = [[SWFormTemplateRepository alloc] init];

@@ -27,15 +27,14 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
-       
-        
     }
     return self;
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
+    //Caching the DateFormatter since it is expensive to create
+    
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [self.dateFormatter setDateFormat:@"MMMM d, yyyy"];
@@ -65,15 +64,19 @@
     }
 }
 
+//
+// Called when the done button has been clicked.
+//
 -(void)doneClicked:(id)sender
 {
-
-    
     NSString *formattedDate = [self.dateFormatter stringFromDate:self.dateField.date];
     
     [self.formController field:self.field didEndEditingWithNewValue:formattedDate];
 }
 
+//
+// Called when the cancel button has been clicked
+//
 -(void)cancelClicked:(id)sender
 {
     [self.formController didCancelEditingForField:self.field];

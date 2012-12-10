@@ -10,6 +10,9 @@
 
 @class SWFormFieldTemplate;
 
+//
+// Represents a form and its field definitions (templates)
+// 
 @interface SWFormTemplate : NSObject
 
 -(void)addFormFieldTemplate:(SWFormFieldTemplate *)formFieldTemplate;
