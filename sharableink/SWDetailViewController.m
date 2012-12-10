@@ -28,6 +28,7 @@ static NSString *AddFormSegueIdentifier = @"AddForm";
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *docView;
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 
 - (void)configureView;
 
@@ -48,7 +49,13 @@ static NSString *AddFormSegueIdentifier = @"AddForm";
 
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+    
+    
 }
 
 - (void)configureView
@@ -56,7 +63,8 @@ static NSString *AddFormSegueIdentifier = @"AddForm";
     // Update the user interface for the detail item.
     if (self.patient != nil)
     {
-        self.navigationItem.title = [NSString stringWithFormat:@"Details for %@", self.patient.name];
+        self.background.image = [UIImage imageNamed:@"WoodBackground.png"];
+        self.navigationItem.title = [NSString stringWithFormat:@"Forms for %@", self.patient.name];
         [self.docView reloadData];
     }
 }

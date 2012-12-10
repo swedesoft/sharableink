@@ -20,6 +20,8 @@ static NSString *TestFlightAPIToken = @"ad05f99d108def2ef3c9befa0484f26b_MTY0MjQ
 @interface SWAppDelegate ()
 
 @property(strong,nonatomic)SWPatientService *patientService;
+@property(strong, nonatomic)UIAlertView *alertView;
+@property(assign,nonatomic)BOOL networkActivityDone;
 
 @end
 
@@ -45,11 +47,44 @@ static NSString *TestFlightAPIToken = @"ad05f99d108def2ef3c9befa0484f26b_MTY0MjQ
     
     [TestFlight takeOff:TestFlightAPIToken];
     
+    [self setupNotifications];
+    
     [self setupPatientService];
+    
+    [self performSelector:@selector(displayNetworkLoading) withObject:nil afterDelay:0.5];
+    
     
     
     return YES;
 }
+
+-(void)displayNetworkLoading
+{
+    if (!self.networkActivityDone)
+    {
+        self.alertView = [[UIAlertView alloc] initWithTitle:@"Network loading" message:@"Waiting for download" delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+        
+        [self.alertView show];
+ 
+    }
+    
+}
+
+-(void)setupNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePatientsRetrieved:) name:NotificationPatientsHasBeenRetrieved object:nil];
+}
+
+-(void)handlePatientsRetrieved:(NSNotification *)notification
+{
+    if (self.alertView)
+    {
+        [self.alertView dismissWithClickedButtonIndex:0 animated:YES];
+    }
+    
+    self.networkActivityDone = YES;
+}
+
 
 -(void)setupPatientService
 {

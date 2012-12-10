@@ -40,7 +40,7 @@
 
 -(void)requestPatients
 {
-    NSURL *url = [NSURL URLWithString:@"http://10.0.1.17:8080/patients"];
+    NSURL *url = [NSURL URLWithString:@"http://sharableink.herokuapp.com/patients"];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     

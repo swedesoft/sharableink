@@ -30,6 +30,8 @@
 		D0876B9E1675706A00FEA6B4 /* SWFormFieldTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0876B9D1675706A00FEA6B4 /* SWFormFieldTemplate.m */; };
 		D0876BA116757A0000FEA6B4 /* SWFormFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D0876BA016757A0000FEA6B4 /* SWFormFactory.m */; };
 		D0876BA31675883900FEA6B4 /* Form.png in Resources */ = {isa = PBXBuildFile; fileRef = D0876BA21675883900FEA6B4 /* Form.png */; };
+		D0876BA516758A3000FEA6B4 /* WoodBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D0876BA416758A3000FEA6B4 /* WoodBackground.png */; };
+		D0876BA716758F4A00FEA6B4 /* NoPatientsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D0876BA616758F4A00FEA6B4 /* NoPatientsBackground.png */; };
 		D08F14921673D00C006BF441 /* AnesthesiaRecord.png in Resources */ = {isa = PBXBuildFile; fileRef = D08F14911673D00C006BF441 /* AnesthesiaRecord.png */; };
 		D08F14A01673FE41006BF441 /* FormBackground.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08F149F1673FE41006BF441 /* FormBackground.xib */; };
 		D08F14A21674017A006BF441 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08F14A11674017A006BF441 /* QuartzCore.framework */; };
@@ -38,7 +40,6 @@
 		D08F14B21674FF1F006BF441 /* SWDateFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = D08F14B11674FF1F006BF441 /* SWDateFieldController.m */; };
 		D08F14B416750105006BF441 /* Fields.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08F14B316750105006BF441 /* Fields.storyboard */; };
 		D08F14B7167502A1006BF441 /* SWDateField.m in Sources */ = {isa = PBXBuildFile; fileRef = D08F14B6167502A1006BF441 /* SWDateField.m */; };
-		D0A0F233167525A100518EC6 /* WoodBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D0A0F232167525A100518EC6 /* WoodBackground.png */; };
 		D0EE23441673AD5E00CEE920 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23431673AD5E00CEE920 /* UIKit.framework */; };
 		D0EE23461673AD5E00CEE920 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23451673AD5E00CEE920 /* Foundation.framework */; };
 		D0EE23481673AD5E00CEE920 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE23471673AD5E00CEE920 /* CoreGraphics.framework */; };
@@ -122,6 +123,8 @@
 		D0876B9F167579FF00FEA6B4 /* SWFormFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFormFactory.h; sourceTree = "<group>"; };
 		D0876BA016757A0000FEA6B4 /* SWFormFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWFormFactory.m; sourceTree = "<group>"; };
 		D0876BA21675883900FEA6B4 /* Form.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Form.png; sourceTree = "<group>"; };
+		D0876BA416758A3000FEA6B4 /* WoodBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WoodBackground.png; sourceTree = "<group>"; };
+		D0876BA616758F4A00FEA6B4 /* NoPatientsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoPatientsBackground.png; sourceTree = "<group>"; };
 		D08F14911673D00C006BF441 /* AnesthesiaRecord.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnesthesiaRecord.png; sourceTree = "<group>"; };
 		D08F149F1673FE41006BF441 /* FormBackground.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormBackground.xib; sourceTree = "<group>"; };
 		D08F14A11674017A006BF441 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -135,7 +138,6 @@
 		D08F14B316750105006BF441 /* Fields.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fields.storyboard; sourceTree = "<group>"; };
 		D08F14B5167502A1006BF441 /* SWDateField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDateField.h; sourceTree = "<group>"; };
 		D08F14B6167502A1006BF441 /* SWDateField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDateField.m; sourceTree = "<group>"; };
-		D0A0F232167525A100518EC6 /* WoodBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WoodBackground.png; path = ../../../Downloads/WoodBackground.png; sourceTree = "<group>"; };
 		D0EE233F1673AD5E00CEE920 /* sharableink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sharableink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EE23431673AD5E00CEE920 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D0EE23451673AD5E00CEE920 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -294,8 +296,9 @@
 		D08F14901673D00C006BF441 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D0876BA616758F4A00FEA6B4 /* NoPatientsBackground.png */,
+				D0876BA416758A3000FEA6B4 /* WoodBackground.png */,
 				D0876BA21675883900FEA6B4 /* Form.png */,
-				D0A0F232167525A100518EC6 /* WoodBackground.png */,
 				D08F14911673D00C006BF441 /* AnesthesiaRecord.png */,
 			);
 			path = images;
@@ -506,8 +509,9 @@
 				D08F14921673D00C006BF441 /* AnesthesiaRecord.png in Resources */,
 				D08F14A01673FE41006BF441 /* FormBackground.xib in Resources */,
 				D08F14B416750105006BF441 /* Fields.storyboard in Resources */,
-				D0A0F233167525A100518EC6 /* WoodBackground.png in Resources */,
 				D0876BA31675883900FEA6B4 /* Form.png in Resources */,
+				D0876BA516758A3000FEA6B4 /* WoodBackground.png in Resources */,
+				D0876BA716758F4A00FEA6B4 /* NoPatientsBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
