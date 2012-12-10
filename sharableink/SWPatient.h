@@ -8,13 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class SWForm;
+
 @interface SWPatient : NSObject
 
 @property(strong,nonatomic)NSString *name;
 @property(strong,nonatomic)NSString *MRN;
 @property(strong,nonatomic)NSString *accountNumber;
+@property(strong,nonatomic,readonly)NSArray *forms;
 
-@property(strong,nonatomic)NSArray *forms;
+-(void)addForm:(SWForm *)form;
+
 
 
 @end

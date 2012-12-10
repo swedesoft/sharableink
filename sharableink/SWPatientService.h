@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class SWPatientFactory;
+
 //This service is responsible for getting the patient data over the network to the
 //device
 @interface SWPatientService : NSObject
@@ -15,5 +17,7 @@
 //Starts an asynchronous call to retrieve patients.
 //Will fire the notification NotificationPatientsHasBeenRetrieved when data is back
 -(void)requestPatients;
+
+@property(strong,nonatomic)SWPatientFactory *patientFactory;
 
 @end

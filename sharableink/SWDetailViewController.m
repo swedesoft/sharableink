@@ -15,17 +15,16 @@
 #import "SWFormController.h"
 #import "SWForm.h"
 #import "SWDateField.h"
+#import "SWPatient.h"
 
 static NSString *EditFormSegueIdentifier = @"EditForm";
 static NSString *AddFormSegueIdentifier = @"AddForm";
-static int BackgroundWidth  = 1275;
-static int BackgroundHeight = 1743;
 
 
 
 @interface SWDetailViewController () <UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,SWFormControllerDelegate>
 
-@property(strong,nonatomic)NSArray *forms;
+
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *docView;
@@ -38,10 +37,10 @@ static int BackgroundHeight = 1743;
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)setPatient:(SWPatient *)newPatient;
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    if (_patient != newPatient) {
+        _patient = newPatient;
         
         // Update the view.
         [self configureView];
@@ -55,61 +54,14 @@ static int BackgroundHeight = 1743;
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+    if (self.patient != nil)
+    {
+        self.navigationItem.title = [NSString stringWithFormat:@"Details for %@", self.patient.name];
+        [self.docView reloadData];
     }
-    
-    
-    self.forms = @[[self createForm], [self createForm]];
-    
 }
 
--(SWForm *)createForm
-{
-    SWForm *form = [[SWForm alloc] init];
-    form.displayTitle = @"Anast";
-    
-    SWSingleSelectListField *field = [[SWSingleSelectListField alloc] init];
-    
-    field.list = @[@"Procedure 1", @"Procedure 2"];
-    CGSize imageSize = CGSizeMake(BackgroundWidth, BackgroundHeight);
-    
-    field.location = CGRectMake(0.279*imageSize.width, 0.118*imageSize.height, 0.683*imageSize.width, 0.022*imageSize.height);
-    field.value = @"Procedure1";
-    field.displayTitle = @"Select procedure";
-    
-    [form addField:field];
-    
-    
-    SWSingleSelectListField *surgeonsField = [[SWSingleSelectListField alloc] init];
-    
-    surgeonsField.list = @[@"Dr 1", @"Dr 2"];
-    surgeonsField.location = CGRectMake(0.279*imageSize.width, 0.152*imageSize.height, 0.333*imageSize.width, 0.009*imageSize.height);
-    surgeonsField.value = @"Dr 1";
-    surgeonsField.displayTitle = @"Select surgeon";
-    
-    [form addField:surgeonsField];
-    
-    SWSingleSelectListField *anesthesiaProvidersField = [[SWSingleSelectListField alloc] init];
-    
-    anesthesiaProvidersField.list = @[@"Dr 3", @"Dr 4"];
-    anesthesiaProvidersField.location = CGRectMake(0.622*imageSize.width, 0.151*imageSize.height, 0.337*imageSize.width, 0.01*imageSize.height);
-    anesthesiaProvidersField.value = @"Dr 3";
-    anesthesiaProvidersField.displayTitle = @"Select provider";
-    
-    [form addField:anesthesiaProvidersField];
-    
-    SWDateField *dateField = [[SWDateField alloc] init];
-    dateField.location = CGRectMake(0.036*imageSize.width, 0.178*imageSize.height, 0.145*imageSize.width, 0.013*imageSize.height);
-    dateField.modalInEditMode = YES;
-    dateField.displayTitle = @"Select date";
-    
-    [form addField:dateField];
-    
-    return form;
-    
-}
+
 
 - (void)viewDidLoad
 {
@@ -148,7 +100,7 @@ static int BackgroundHeight = 1743;
         
         //We are only allowing one selection and since we are being called here
         //we know we have one selected item
-        SWForm *selectedForm = self.forms[selectedItemPath.row];
+        SWForm *selectedForm = self.patient.forms[selectedItemPath.row];
         
         controller.form = selectedForm;
 
@@ -177,17 +129,11 @@ static int BackgroundHeight = 1743;
 {
     //Setup the visual
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+
+    UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Form"]];
     
-    CGRect labelFrame = CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height);
+    [cell.contentView addSubview:image];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:labelFrame];
-    
-    [cell.contentView addSubview:label];
-    
-    //Setup the data
-    SWForm *form = self.forms[indexPath.row];
-    
-    label.text = form.displayTitle;
     
     return cell;
     
@@ -195,7 +141,7 @@ static int BackgroundHeight = 1743;
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.forms count];
+    return [self.patient.forms count];
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

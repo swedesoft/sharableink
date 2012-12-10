@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class SWPatient;
+
 @interface SWDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic)SWPatient *patient;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end

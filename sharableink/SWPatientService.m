@@ -13,9 +13,9 @@
 #import "SWField.h"
 #import "SWForm.h"
 #import "SWDateField.h"
+#import "SWPatientFactory.h"
 
-static int BackgroundWidth  = 1275;
-static int BackgroundHeight = 1743;
+
 
 
 
@@ -40,33 +40,39 @@ static int BackgroundHeight = 1743;
 
 -(void)requestPatients
 {
-//    NSURL *url = [NSURL URLWithString:@""];
-//    
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    
-//    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-//        NSLog(@"Data came back");
-//    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-//        NSLog(@"Something went wrong");
-//    }];
-//    
-//    
-//    [operation start];
+    NSURL *url = [NSURL URLWithString:@"http://10.0.1.17:8080/patients"];
     
-    //Create some patients
-    SWPatient *patient = [[SWPatient alloc] init];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-    patient.name = @"Peter";
-    patient.MRN = @"12345";
-    patient.accountNumber = @"12345";
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+
+        NSDictionary *userInfo = @{ NotificationKeyPatients : [self createPatientsFromJSON:JSON] };
+        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationPatientsHasBeenRetrieved object:self userInfo:userInfo];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Something went wrong");
+        NSLog(@"%@", error.description);
+    }];
     
-    patient.forms = @[[self createForm]];
     
-    NSDictionary *userInfo = @{ NotificationKeyPatients : @[patient] };
+    
+    [operation start];
     
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:NotificationPatientsHasBeenRetrieved object:self userInfo:userInfo];
+}
 
+-(NSArray *)createPatientsFromJSON:(NSArray *)json
+{
+    NSMutableArray *patients = [NSMutableArray array];
+    
+    [json enumerateObjectsUsingBlock:^(NSDictionary *jsonPatient, NSUInteger idx, BOOL *stop) {
+
+        [patients addObject:[self.patientFactory createPatientFromJSONData:jsonPatient]];
+
+    }];
+    
+    return patients;
+    
 }
 
 -(SWForm *)createForm
@@ -74,42 +80,42 @@ static int BackgroundHeight = 1743;
     SWForm *form = [[SWForm alloc] init];
     form.displayTitle = @"Anast";
     
-    SWSingleSelectListField *field = [[SWSingleSelectListField alloc] init];
-    
-    field.list = @[@"Procedure 1", @"Procedure 2"];
-    CGSize imageSize = CGSizeMake(BackgroundWidth, BackgroundHeight);
-    
-    field.location = CGRectMake(0.279*imageSize.width, 0.118*imageSize.height, 0.683*imageSize.width, 0.022*imageSize.height);
-    field.value = @"Procedure1";
-    field.displayTitle = @"Select procedure";
-    
-    [form addField:field];
-    
-    
-    SWSingleSelectListField *surgeonsField = [[SWSingleSelectListField alloc] init];
-    
-    surgeonsField.list = @[@"Dr 1", @"Dr 2"];
-    surgeonsField.location = CGRectMake(0.279*imageSize.width, 0.152*imageSize.height, 0.333*imageSize.width, 0.009*imageSize.height);
-    surgeonsField.value = @"Dr 1";
-    surgeonsField.displayTitle = @"Select surgeon";
-    
-    [form addField:surgeonsField];
-    
-    SWSingleSelectListField *anesthesiaProvidersField = [[SWSingleSelectListField alloc] init];
-    
-    anesthesiaProvidersField.list = @[@"Dr 3", @"Dr 4"];
-    anesthesiaProvidersField.location = CGRectMake(0.622*imageSize.width, 0.151*imageSize.height, 0.337*imageSize.width, 0.01*imageSize.height);
-    anesthesiaProvidersField.value = @"Dr 3";
-    anesthesiaProvidersField.displayTitle = @"Select provider";
-    
-    [form addField:anesthesiaProvidersField];
-    
-    SWDateField *dateField = [[SWDateField alloc] init];
-    dateField.location = CGRectMake(0.036*imageSize.width, 0.178*imageSize.height, 0.145*imageSize.width, 0.013*imageSize.height);
-    dateField.modalInEditMode = YES;
-    dateField.displayTitle = @"Select date";
-    
-    [form addField:dateField];
+//    SWSingleSelectListField *field = [[SWSingleSelectListField alloc] init];
+//    
+//    field.list = @[@"Procedure 1", @"Procedure 2"];
+//    CGSize imageSize = CGSizeMake(BackgroundWidth, BackgroundHeight);
+//    
+//    field.location = CGRectMake(0.279*imageSize.width, 0.118*imageSize.height, 0.683*imageSize.width, 0.022*imageSize.height);
+//    field.value = @"Procedure1";
+//    field.displayTitle = @"Select procedure";
+//    
+//    [form addField:field];
+//    
+//    
+//    SWSingleSelectListField *surgeonsField = [[SWSingleSelectListField alloc] init];
+//    
+//    surgeonsField.list = @[@"Dr 1", @"Dr 2"];
+//    surgeonsField.location = CGRectMake(0.279*imageSize.width, 0.152*imageSize.height, 0.333*imageSize.width, 0.009*imageSize.height);
+//    surgeonsField.value = @"Dr 1";
+//    surgeonsField.displayTitle = @"Select surgeon";
+//    
+//    [form addField:surgeonsField];
+//    
+//    SWSingleSelectListField *anesthesiaProvidersField = [[SWSingleSelectListField alloc] init];
+//    
+//    anesthesiaProvidersField.list = @[@"Dr 3", @"Dr 4"];
+//    anesthesiaProvidersField.location = CGRectMake(0.622*imageSize.width, 0.151*imageSize.height, 0.337*imageSize.width, 0.01*imageSize.height);
+//    anesthesiaProvidersField.value = @"Dr 3";
+//    anesthesiaProvidersField.displayTitle = @"Select provider";
+//    
+//    [form addField:anesthesiaProvidersField];
+//    
+//    SWDateField *dateField = [[SWDateField alloc] init];
+//    dateField.location = CGRectMake(0.036*imageSize.width, 0.178*imageSize.height, 0.145*imageSize.width, 0.013*imageSize.height);
+//    dateField.modalInEditMode = YES;
+//    dateField.displayTitle = @"Select date";
+//    
+//    [form addField:dateField];
     
     return form;
     

@@ -11,6 +11,6 @@
 
 @interface SWSingleSelectListField : SWField
 
-@property(strong,nonatomic)NSArray *list;
+
 
 @end

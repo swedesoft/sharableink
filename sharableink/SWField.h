@@ -15,5 +15,6 @@
 @property(strong, nonatomic)NSString *value;
 @property(assign, nonatomic)BOOL modalInEditMode;
 @property(strong, nonatomic)NSString *displayTitle;
+@property(strong, nonatomic)NSArray *list;
 
 @end

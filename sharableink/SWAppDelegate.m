@@ -10,6 +10,9 @@
 
 #import "SWMasterViewController.h"
 #import "SWPatientService.h"
+#import "SWPatientFactory.h"
+#import "SWFormTemplateRepository.h"
+#import "SWFormFactory.h"
 
 
 static NSString *TestFlightAPIToken = @"ad05f99d108def2ef3c9befa0484f26b_MTY0MjQzMjAxMi0xMi0wOCAxMjo0Nzo1My4yOTcyNzU";
@@ -42,13 +45,27 @@ static NSString *TestFlightAPIToken = @"ad05f99d108def2ef3c9befa0484f26b_MTY0MjQ
     
     [TestFlight takeOff:TestFlightAPIToken];
     
-    //Setup services and fire any network requests we need
-    self.patientService = [[SWPatientService alloc] init];
-
+    [self setupPatientService];
+    
     
     return YES;
 }
 
+-(void)setupPatientService
+{
+    SWFormTemplateRepository *templateRepository = [[SWFormTemplateRepository alloc] init];
+    SWFormFactory *formFactory = [[SWFormFactory alloc] init];
+    
+    SWPatientFactory *patientFactory = [[SWPatientFactory alloc] init];
+    patientFactory.templateRepository = templateRepository;
+    patientFactory.formFactory = formFactory;
+    
+    //Setup services and fire any network requests we need
+    self.patientService = [[SWPatientService alloc] init];
+    
+    self.patientService.patientFactory = patientFactory;
+
+}
 
 							
 - (void)applicationWillResignActive:(UIApplication *)application
